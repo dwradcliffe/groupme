@@ -2,11 +2,11 @@ require 'groupme'
 require 'webmock/rspec'
 
 def stub_get(url)
-  stub_request(:get, "https://api.groupme.com/v3#{url}").with(:headers => {'Accept'=>'*/*', 'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3', 'User-Agent'=>"groupme gem v#{Groupme::VERSION}"})
+  stub_request(:get, "https://api.groupme.com/v3#{url}").with(:headers => {'Accept'=>'*/*', 'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3', 'User-Agent'=>Groupme::USER_AGENT})
 end
 
 def stub_post(url)
-  stub_request(:post, "https://api.groupme.com/v3#{url}").with(:headers => {'Accept'=>'*/*', 'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3', 'User-Agent'=>"groupme gem v#{Groupme::VERSION}"})
+  stub_request(:post, "https://api.groupme.com/v3#{url}").with(:headers => {'Accept'=>'*/*', 'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3', 'User-Agent'=>Groupme::USER_AGENT})
 end
 
 def fixture_path

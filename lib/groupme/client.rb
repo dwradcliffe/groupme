@@ -36,7 +36,7 @@ module Groupme
         @connection ||= Faraday.new 'https://api.groupme.com/' do |f|
           f.request :oauth2, @token if @token
           f.request :json
-          f.headers[:user_agent] = "groupme gem v#{Groupme::VERSION}"
+          f.headers[:user_agent] = Groupme::USER_AGENT
 
           # f.response :logger
           f.response :mashify
