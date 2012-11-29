@@ -26,7 +26,7 @@ module Groupme
       end
 
       def request(method, path, data={})
-        connection.send(method, "v3/#{path}", data).body
+        connection.send(method, "v3/#{path}", data).body.response
       end
 
       # Returns a Faraday::Connection object

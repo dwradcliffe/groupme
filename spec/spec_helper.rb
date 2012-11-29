@@ -14,12 +14,18 @@ def fixture_path
 end
 
 def fixture(file)
-  File.new(fixture_path + '/' + file)
+  WebMock::Util::JSON.parse(File.read(fixture_path + '/' + file))
 end
 
 def json_response(file)
   {
-    :body => fixture(file),
+    :body => {
+      response: fixture(file),
+      meta: {
+        code: 200,
+        errors: []
+      }
+    },
     :headers => {
       :content_type => 'application/json; charset=utf-8'
     }
