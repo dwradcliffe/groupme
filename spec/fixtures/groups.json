@@ -1,0 +1,30 @@
+[
+  {
+    "id": "1234567890",
+    "name": "Family",
+    "type": "private",
+    "description": "Coolest Family Ever",
+    "image_url": "http://i.groupme.com/123456789.jpg",
+    "creator_user_id": "1234567890",
+    "created_at": 1302623328,
+    "updated_at": 1302623328,
+    "members": [
+      {
+        "user_id": "1234567890",
+        "nickname": "Jane",
+        "muted": false,
+        "image_url": "http://i.groupme.com/123456789.jpg"
+      }
+    ],
+    "messages": {
+      "count": 100,
+      "last_message_id": "1234567890",
+      "last_message_created_at": 1302623328,
+      "preview": {
+        "nickname": "Jane",
+        "text": "Hello world",
+        "image_url": "http://i.groupme.com/123456789.jpg"
+      }
+    }
+  }
+]
