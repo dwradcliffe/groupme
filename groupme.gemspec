@@ -5,7 +5,7 @@ require 'groupme/version'
 
 Gem::Specification.new do |gem|
   gem.name          = "groupme"
-  gem.version       = Groupme::VERSION
+  gem.version       = GroupMe::VERSION
   gem.authors       = ["David Radcliffe"]
   gem.email         = ["radcliffe.david@gmail.com"]
   gem.description   = %q{Simple wrapper for the GroupMe v3 API}

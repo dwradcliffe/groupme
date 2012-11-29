@@ -1,6 +1,6 @@
 require "groupme/version"
 require "groupme/client"
 
-module Groupme
-  USER_AGENT = "dwradcliffe/groupme/#{Groupme::VERSION}"
+module GroupMe
+  USER_AGENT = "dwradcliffe/groupme/#{GroupMe::VERSION}"
 end

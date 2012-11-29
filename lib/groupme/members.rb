@@ -1,4 +1,4 @@
-module Groupme
+module GroupMe
   module Members
 
   end

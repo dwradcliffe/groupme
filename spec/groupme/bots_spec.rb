@@ -1,9 +1,9 @@
 require 'spec_helper'
 
-describe Groupme::Bots do
+describe GroupMe::Bots do
 
   before do
-    @client = Groupme::Client.new(:token => "TEST")
+    @client = GroupMe::Client.new(:token => "TEST")
   end
 
   describe ".bots" do

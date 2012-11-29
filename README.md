@@ -1,4 +1,4 @@
-# Groupme
+# groupme
 
 Simple wrapper for the GroupMe v3 API.
 

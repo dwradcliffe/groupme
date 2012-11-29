@@ -1,4 +1,4 @@
-module Groupme
+module GroupMe
   module Groups
 
     # List the authenticated user's active groups.
@@ -6,7 +6,7 @@ module Groupme
     # @return [Array<Hashie::Mash>] Array of hashes representing groups.
     # @see http://dev.groupme.com/docs/v3#groups_index
     # @example
-    #   client = Groupme::Client.new
+    #   client = GroupMe::Client.new
     #   client.groups
     def groups
       get("/groups")
@@ -18,7 +18,7 @@ module Groupme
     # @return [Hashie::Mash] Hash representing the group.
     # @see http://dev.groupme.com/docs/v3#groups_show
     # @example
-    #   client = Groupme::Client.new
+    #   client = GroupMe::Client.new
     #   client.group(32)
     def group(id)
       get("/groups/#{id}")
@@ -29,7 +29,7 @@ module Groupme
     # @return [Array<Hashie::Mash>] Array of hashes representing groups.
     # @see http://dev.groupme.com/docs/v3#groups_index_former
     # @example
-    #   client = Groupme::Client.new
+    #   client = GroupMe::Client.new
     #   client.former_groups
     def former_groups
       get("/groups/former")

@@ -1,3 +1,3 @@
-module Groupme
+module GroupMe
   VERSION = "0.0.1.pre"
 end

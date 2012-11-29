@@ -1,4 +1,4 @@
-module Groupme
+module GroupMe
   module Bots
 
     # List the authenticated user's bots.
@@ -6,7 +6,7 @@ module Groupme
     # @return [Array<Hashie::Mash>] Array of hashes representing bots.
     # @see http://dev.groupme.com/docs/v3#bots_index
     # @example
-    #   client = Groupme::Client.new
+    #   client = GroupMe::Client.new
     #   client.bots
     def bots
       get("/bots")
@@ -18,7 +18,7 @@ module Groupme
     # @return [Hashie::Mash] Hash representing the bot.
     # @see http://dev.groupme.com/docs/v3#bots_show
     # @example
-    #   client = Groupme::Client.new
+    #   client = GroupMe::Client.new
     #   client.bot(32)
     def bot(id)
       get("/bots/#{id}")
