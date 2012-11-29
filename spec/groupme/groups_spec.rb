@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Groupme::Groups do
 
   before do
-    @client = Groupme::Client.new
+    @client = Groupme::Client.new(:token => "TEST")
   end
 
   describe ".groups" do

@@ -1,4 +1,3 @@
-require 'groupme/authentication'
 require 'groupme/groups'
 require 'groupme/members'
 require 'groupme/bots'
@@ -8,7 +7,8 @@ module Groupme
   class Client
 
     def initialize(options={})
-      @token = options.delete(:token)
+      @token = options[:token].to_s
+      raise ArgumentError, ":token can't be blank" if @token.empty?
     end
 
     include Groupme::Groups
@@ -34,9 +34,9 @@ module Groupme
       # @return [Faraday::Connection]
       def connection
         @connection ||= Faraday.new 'https://api.groupme.com/' do |f|
-          f.request :oauth2, @token if @token
           f.request :json
           f.headers[:user_agent] = Groupme::USER_AGENT
+          f.headers["X-Access-Token"] = @token
 
           # f.response :logger
           f.response :mashify
