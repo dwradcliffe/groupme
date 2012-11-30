@@ -9,7 +9,7 @@ module GroupMe
     #   client = GroupMe::Client.new
     #   client.groups
     def groups
-      get("/groups")
+      get "/groups"
     end
     alias :list_groups :groups
 
@@ -21,7 +21,7 @@ module GroupMe
     #   client = GroupMe::Client.new
     #   client.group(32)
     def group(id)
-      get("/groups/#{id}")
+      get "/groups/#{id}"
     end
 
     # List the authenticated user's former groups.
@@ -32,9 +32,14 @@ module GroupMe
     #   client = GroupMe::Client.new
     #   client.former_groups
     def former_groups
-      get("/groups/former")
+      get 'groups/former'
     end
     alias :list_former_groups :former_groups
+
+    def create_group(name, options={})
+      options.merge! :name => name
+      post 'groups', options
+    end
 
   end
 end
