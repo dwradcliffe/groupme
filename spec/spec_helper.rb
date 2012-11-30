@@ -22,10 +22,10 @@ end
 def json_response(file)
   {
     :body => {
-      response: fixture(file),
-      meta: {
-        code: 200,
-        errors: []
+      :response => fixture(file),
+      :meta => {
+        :code => 200,
+        :errors => []
       }
     },
     :headers => {
