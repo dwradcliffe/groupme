@@ -17,6 +17,7 @@ module GroupMe
     #
     # @return [Hashie::Mash] Hash representing the group.
     # @see http://dev.groupme.com/docs/v3#groups_show
+    # @param id [String, Integer] The ID of the group
     # @example
     #   client = GroupMe::Client.new
     #   client.group(32)
@@ -32,13 +33,21 @@ module GroupMe
     #   client = GroupMe::Client.new
     #   client.former_groups
     def former_groups
-      get 'groups/former'
+      get '/groups/former'
     end
     alias :list_former_groups :former_groups
 
+    # Create a new group.
+    #
+    # @return [Hashie::Mash] Hash representing the group
+    # @see
+    # @param name [String] Name for the new group
+    # @param options [Hash] Group information
+    # @option options [String] :description Description of the group
+    # @option options [String] :image Base64 JPEG or PNG data
     def create_group(name, options={})
       options.merge! :name => name
-      post 'groups', options
+      post '/groups', options
     end
 
   end

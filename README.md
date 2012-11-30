@@ -16,6 +16,11 @@ Or install it yourself as:
 
     $ gem install groupme
 
+## Documentation
+[http://rdoc.info/github/dwradcliffe/groupme][documentation]
+
+[documentation]: http://rdoc.info/github/dwradcliffe/groupme
+
 ## Usage
 
 TODO: Write usage instructions here

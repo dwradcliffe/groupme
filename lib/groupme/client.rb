@@ -26,7 +26,12 @@ module GroupMe
       end
 
       def request(method, path, data={})
-        connection.send(method, "v3/#{path}", data).body.response
+        res = connection.send(method, "v3/#{path}", data)
+        if res.status == 200
+          return res.body.response
+        else
+          return res
+        end
       end
 
       # Returns a Faraday::Connection object
