@@ -1,0 +1,39 @@
+module GroupMe
+  module Messages
+
+    # Create a message for a group
+    #
+    # @return [Hashie::Mash] Hash representing the message
+    # @see http://dev.groupme.com/docs/v3#messages_create
+    # @param group_id [String, Integer] Id of the group
+    # @param text [String] Text of the message
+    def create_message(group_id, text)
+      data = {
+        :message => {
+          :source_guid => "GUID",
+          :text => text
+        }
+      }
+      post("/groups/#{group_id}/messages", data).message
+    end
+
+    # List messages for a group
+    #
+    # @return [Array<Hashie::Mash>] Array of hashes representing the messages
+    # @see http://dev.groupme.com/docs/v3#messages_index
+    # @param group_id [String, Integer] Id of the group
+    def messages(group_id)
+      get("/groups/#{group_id}/messages").messages
+    end
+
+    # Get number of messages for a group
+    #
+    # @return [Integer] Number of messages
+    # @param group_id [String, Integer] Id of the group
+    def messages_count(group_id)
+      get("/groups/#{group_id}/messages")['count']
+    end
+    alias :message_count :messages_count
+
+  end
+end

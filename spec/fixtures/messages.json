@@ -1,0 +1,32 @@
+{
+  "count": 123,
+  "messages": [
+    {
+      "id": "1234567890",
+      "source_guid": "GUID",
+      "created_at": 1302623328,
+      "user_id": "1234567890",
+      "group_id": "1234567890",
+      "name": "John",
+      "avatar_url": "http://i.groupme.com/123456789.jpg",
+      "text": "Hello world",
+      "system": true,
+      "attachments": [
+        {
+          "type": "image",
+          "url": "http://i.groupme.com/123456789.jpg"
+        },
+        {
+          "type": "image",
+          "url": "http://i.groupme.com/123456789.jpg"
+        },
+        {
+          "type": "location",
+          "lat": "40.738206",
+          "lng": "-73.993285",
+          "name": "GroupMe HQ"
+        }
+      ]
+    }
+  ]
+}
