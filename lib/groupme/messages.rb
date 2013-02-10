@@ -7,13 +7,15 @@ module GroupMe
     # @see http://dev.groupme.com/docs/v3#messages_create
     # @param group_id [String, Integer] Id of the group
     # @param text [String] Text of the message
-    def create_message(group_id, text)
+    # @param attachments [Array<Hash>] Array of attachments
+    def create_message(group_id, text, attachments=[])
       data = {
         :message => {
           :source_guid => "GUID",
           :text => text
         }
       }
+      data[:message][:attachments] = attachments if attachments.any?
       post("/groups/#{group_id}/messages", data).message
     end
 

@@ -39,6 +39,32 @@ describe GroupMe::Messages do
       expect(message.text).to eq("Hello world")
     end
 
+    it "sends a message with location to a group" do
+      message = {
+        :message => {
+          :source_guid => "GUID",
+          :text => "Hello world",
+          :attachments => [
+            {
+              :type => "location",
+              :lat => "40.738206",
+              :lng => "-73.993285",
+              :name => "GroupMe HQ"
+            }
+          ]
+        }
+      }
+      stub_post("/groups/1/messages", message).to_return(json_response("message_with_location.json"))
+      
+      att = { :type => "location", :lat => "40.738206", :lng => "-73.993285", :name => "GroupMe HQ" }
+      message = @client.create_message(1, "Hello world", [att])
+      expect(message.text).to eq("Hello world")
+      expect(message.attachments.count).to eq(1)
+      expect(message.attachments.first.type).to eq("location")
+      expect(message.attachments.first.lat).to eq("40.738206")
+      expect(message.attachments.first.lng).to eq("-73.993285")
+    end
+
   end
 
 end

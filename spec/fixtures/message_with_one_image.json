@@ -9,6 +9,11 @@
     "avatar_url": "http://i.groupme.com/123456789.jpg",
     "text": "Hello world",
     "system": true,
-    "attachments": []
+    "attachments": [
+      {
+        "type": "image",
+        "url": "http://i.groupme.com/123456789.jpg"
+      }
+    ]
   }
 }

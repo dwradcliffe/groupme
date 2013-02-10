@@ -9,6 +9,13 @@
     "avatar_url": "http://i.groupme.com/123456789.jpg",
     "text": "Hello world",
     "system": true,
-    "attachments": []
+    "attachments": [
+      {
+        "type": "location",
+        "lat": "40.738206",
+        "lng": "-73.993285",
+        "name": "GroupMe HQ"
+      }
+    ]
   }
 }
