@@ -22,7 +22,7 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency 'rspec'
   gem.add_development_dependency 'webmock'
   gem.add_development_dependency 'yard'
-  gem.add_development_dependency 'redcarpet'
+  gem.add_development_dependency 'redcarpet', '~> 2.0'
   gem.add_development_dependency 'pry'
   gem.add_development_dependency 'json', '~> 1.7'
 
