@@ -3,6 +3,7 @@ require 'groupme/members'
 require 'groupme/bots'
 require 'groupme/messages'
 require 'groupme/users'
+require 'groupme/likes'
 require 'faraday_middleware'
 
 module GroupMe
@@ -18,6 +19,7 @@ module GroupMe
     include GroupMe::Bots
     include GroupMe::Messages
     include GroupMe::Users
+    include GroupMe::Likes
 
     private
 
@@ -25,13 +27,13 @@ module GroupMe
         request(:get, path)
       end
 
-      def post(path, data)
+      def post(path, data={})
         request(:post, path, data)
       end
 
       def request(method, path, data={})
         res = connection.send(method, "v3/#{path}", data)
-        if res.status == 200
+        if res.status == 200 and !res.body.nil?
           return res.body.response
         else
           return res

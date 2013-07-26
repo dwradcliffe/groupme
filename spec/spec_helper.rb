@@ -6,7 +6,7 @@ def stub_get(url)
   stub_request(:get, "https://api.groupme.com/v3#{url}")
 end
 
-def stub_post(url, data)
+def stub_post(url, data={})
   stub_request(:post, "https://api.groupme.com/v3#{url}").with(:body => MultiJson.dump(data))
 end
 
