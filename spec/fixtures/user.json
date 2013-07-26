@@ -1,0 +1,10 @@
+{
+  "id": "1234567890",
+  "phone_number": "+1 2123001234",
+  "image_url": "http://i.groupme.com/123456789",
+  "name": "Ronald Swanson",
+  "created_at": 1302623328,
+  "updated_at": 1302623328,
+  "email": "me@example.com",
+  "sms": false
+}

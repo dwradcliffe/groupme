@@ -2,6 +2,7 @@ require 'groupme/groups'
 require 'groupme/members'
 require 'groupme/bots'
 require 'groupme/messages'
+require 'groupme/users'
 require 'faraday_middleware'
 
 module GroupMe
@@ -16,6 +17,7 @@ module GroupMe
     include GroupMe::Members
     include GroupMe::Bots
     include GroupMe::Messages
+    include GroupMe::Users
 
     private
 
