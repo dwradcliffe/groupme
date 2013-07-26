@@ -46,4 +46,30 @@ describe GroupMe::Groups do
 
   end
 
+  describe ".update_group" do
+
+    it "updates a group after creation" do
+      data = {
+        :name => "Family",
+        :share => true,
+        :image_url => "http://i.groupme.com/123456789"
+      }
+      stub_post("/groups/4321/update", data).to_return(json_response("updated_group.json"))
+      group = @client.update_group(4321, data)
+      expect(group.name).to eq("Family")
+      expect(group.share_url).to eq("https://groupme.com/join_group/1234567890/SHARE_TOKEN")
+    end
+
+  end
+
+  describe ".destroy_group" do
+
+    it "disbands a group" do
+      stub_post("/groups/4/destroy").to_return(:status => 200)
+      response = @client.destroy_group(4)
+      expect(response).to eq(true)
+    end
+
+  end
+
 end

@@ -40,14 +40,37 @@ module GroupMe
     # Create a new group.
     #
     # @return [Hashie::Mash] Hash representing the group
-    # @see
+    # @see http://dev.groupme.com/docs/v3#groups_create
     # @param name [String] Name for the new group
     # @param options [Hash] Group information
     # @option options [String] :description Description of the group
-    # @option options [String] :image Base64 JPEG or PNG data
+    # @option options [String] :image_url GroupMe Image Service URL
+    # @option options [Boolean] :share If you pass a true value, a share URL will be generated
     def create_group(name, options={})
       options.merge! :name => name
       post '/groups', options
+    end
+
+    # Update a group after creation
+    #
+    # @return [Hashie::Mash] Hash representing the group
+    # @see http://dev.groupme.com/docs/v3#groups_update
+    # @param name [Integer] Group ID
+    # @param data [Hash] Group information
+    # @option data [String] :name Name of the group
+    # @option data [String] :description Description of the group
+    # @option data [String] :image_url GroupMe Image Service URL
+    # @option options [Boolean] :share If you pass a true value, a share URL will be generated
+    def update_group(group_id, data)
+      post "/groups/#{group_id}/update", data
+    end
+
+    # Disband a group
+    #
+    # @return [Boolean] Success/Failure
+    # @see http://dev.groupme.com/docs/v3#groups_destroy
+    def destroy_group(group_id)
+      post("/groups/#{group_id}/destroy").status == 200
     end
 
   end
