@@ -23,4 +23,11 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+You will need to start with a client object:
+
+    @client = GroupMe::Client.new(:token => "TEST")
+    
+Then you can call any of the API methods on this object:
+
+    groups = @client.groups
+    new_group = @client.create_group("Family")
