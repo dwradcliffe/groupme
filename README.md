@@ -17,9 +17,9 @@ Or install it yourself as:
     $ gem install groupme
 
 ## Documentation
-[http://rdoc.info/github/dwradcliffe/groupme][documentation]
+[http://rdoc.info/gems/groupme/frames/index][documentation]
 
-[documentation]: http://rdoc.info/github/dwradcliffe/groupme
+[documentation]: http://rdoc.info/gems/groupme/frames/index
 
 ## Usage
 
