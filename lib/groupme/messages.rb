@@ -11,12 +11,13 @@ module GroupMe
     def create_message(group_id, text, attachments=[])
       data = {
         :message => {
-          :source_guid => "GUID",
+          :source_guid => Time.now.to_s,
           :text => text
         }
       }
       data[:message][:attachments] = attachments if attachments.any?
-      post("/groups/#{group_id}/messages", data).env[:body].response.message
+      response = post("/groups/#{group_id}/messages", data)
+      response.env[:body].response.message
     end
 
     # List messages for a group
