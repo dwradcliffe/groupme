@@ -73,5 +73,13 @@ module GroupMe
       post("/groups/#{group_id}/destroy").status == 200
     end
 
+    # Join a shared group
+    #
+    # @return [Boolean] Success/Failure
+    # @see https://dev.groupme.com/docs/v3#groups_join
+    def join_group(group_id, share_token)
+      post("/groups/#{group_id}/join/#{share_token}").status == 200
+    end
+
   end
 end

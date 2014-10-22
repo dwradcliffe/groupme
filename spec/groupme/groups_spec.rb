@@ -72,4 +72,14 @@ describe GroupMe::Groups do
 
   end
 
+  describe ".join_group" do
+
+    it "joins a shared group" do
+      stub_post("/groups/4/join/1234asdf").to_return(:status => 200)
+      response = @client.join_group(4, '1234asdf')
+      expect(response).to eq(true)
+    end
+
+  end
+
 end
