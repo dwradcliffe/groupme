@@ -4,7 +4,7 @@ module GroupMe
     # List the authenticated user's active groups.
     #
     # @return [Array<Hashie::Mash>] Array of hashes representing groups.
-    # @see http://dev.groupme.com/docs/v3#groups_index
+    # @see https://dev.groupme.com/docs/v3#groups_index
     # @example
     #   client = GroupMe::Client.new
     #   client.groups
@@ -16,7 +16,7 @@ module GroupMe
     # Load a specific group.
     #
     # @return [Hashie::Mash] Hash representing the group.
-    # @see http://dev.groupme.com/docs/v3#groups_show
+    # @see https://dev.groupme.com/docs/v3#groups_show
     # @param id [String, Integer] The ID of the group
     # @example
     #   client = GroupMe::Client.new
@@ -28,7 +28,7 @@ module GroupMe
     # List the authenticated user's former groups.
     #
     # @return [Array<Hashie::Mash>] Array of hashes representing groups.
-    # @see http://dev.groupme.com/docs/v3#groups_index_former
+    # @see https://dev.groupme.com/docs/v3#groups_index_former
     # @example
     #   client = GroupMe::Client.new
     #   client.former_groups
@@ -40,7 +40,7 @@ module GroupMe
     # Create a new group.
     #
     # @return [Hashie::Mash] Hash representing the group
-    # @see http://dev.groupme.com/docs/v3#groups_create
+    # @see https://dev.groupme.com/docs/v3#groups_create
     # @param name [String] Name for the new group
     # @param options [Hash] Group information
     # @option options [String] :description Description of the group
@@ -54,7 +54,7 @@ module GroupMe
     # Update a group after creation
     #
     # @return [Hashie::Mash] Hash representing the group
-    # @see http://dev.groupme.com/docs/v3#groups_update
+    # @see https://dev.groupme.com/docs/v3#groups_update
     # @param name [Integer] Group ID
     # @param data [Hash] Group information
     # @option data [String] :name Name of the group
@@ -68,7 +68,7 @@ module GroupMe
     # Disband a group
     #
     # @return [Boolean] Success/Failure
-    # @see http://dev.groupme.com/docs/v3#groups_destroy
+    # @see https://dev.groupme.com/docs/v3#groups_destroy
     def destroy_group(group_id)
       post("/groups/#{group_id}/destroy").status == 200
     end

@@ -4,7 +4,7 @@ module GroupMe
     # Add members to a group
     #
     # @return [Boolean] Success/Failure
-    # @see http://dev.groupme.com/docs/v3#members_add
+    # @see https://dev.groupme.com/docs/v3#members_add
     # @param id [String, Integer] Id of the group
     # @param members [Array<Hash>] Members to be added
     # @option members [String] :nickname
@@ -19,7 +19,7 @@ module GroupMe
     # Add member to a group
     #
     # @return [Boolean] Success/Failure
-    # @see http://dev.groupme.com/docs/v3#members_add
+    # @see https://dev.groupme.com/docs/v3#members_add
     # @param id [String, Integer] Id of the group
     # @param member [Hash] Member to be added
     # @option member [String] :nickname

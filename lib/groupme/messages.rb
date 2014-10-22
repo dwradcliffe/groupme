@@ -4,7 +4,7 @@ module GroupMe
     # Create a message for a group
     #
     # @return [Hashie::Mash] Hash representing the message
-    # @see http://dev.groupme.com/docs/v3#messages_create
+    # @see https://dev.groupme.com/docs/v3#messages_create
     # @param group_id [String, Integer] Id of the group
     # @param text [String] Text of the message
     # @param attachments [Array<Hash>] Array of attachments
@@ -22,7 +22,7 @@ module GroupMe
     # List messages for a group
     #
     # @return [Array<Hashie::Mash>] Array of hashes representing the messages
-    # @see http://dev.groupme.com/docs/v3#messages_index
+    # @see https://dev.groupme.com/docs/v3#messages_index
     # @param group_id [String, Integer] Id of the group
     def messages(group_id)
       get("/groups/#{group_id}/messages").messages
