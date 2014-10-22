@@ -44,4 +44,14 @@ describe GroupMe::Members do
 
   end
 
+  describe '.remove_member' do
+
+    it 'removes a member from the group' do
+      stub_post("/groups/1/members/234/remove").to_return(:status => 200)
+      response = @client.remove_member(1, 234)
+      expect(response).to eq(true)
+    end
+
+  end
+
 end

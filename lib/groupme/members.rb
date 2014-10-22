@@ -31,5 +31,15 @@ module GroupMe
       post("/groups/#{id}/members/add", [member]).status == 202
     end
 
+    # Remove a member from a group
+    #
+    # @return [Boolean] Success/Failure
+    # @see https://dev.groupme.com/docs/v3#members_remove
+    # @param group_id [String, Integer] Id of the group
+    # @param member_id [String, Integer] Id of the member
+    def remove_member(group_id, member_id)
+      post("/groups/#{group_id}/members/#{member_id}/remove").status == 200
+    end
+
   end
 end
