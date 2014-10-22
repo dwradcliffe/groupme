@@ -4,7 +4,7 @@
     "name": "Family",
     "type": "private",
     "description": "Coolest Family Ever",
-    "image_url": "http://i.groupme.com/123456789.jpg",
+    "image_url": "http://i.groupme.com/123456789",
     "creator_user_id": "1234567890",
     "created_at": 1302623328,
     "updated_at": 1302623328,
@@ -13,9 +13,10 @@
         "user_id": "1234567890",
         "nickname": "Jane",
         "muted": false,
-        "image_url": "http://i.groupme.com/123456789.jpg"
+        "image_url": "http://i.groupme.com/123456789"
       }
     ],
+    "share_url": "https://groupme.com/join_group/1234567890/SHARE_TOKEN",
     "messages": {
       "count": 100,
       "last_message_id": "1234567890",
@@ -23,7 +24,41 @@
       "preview": {
         "nickname": "Jane",
         "text": "Hello world",
-        "image_url": "http://i.groupme.com/123456789.jpg"
+        "image_url": "http://i.groupme.com/123456789",
+        "attachments": [
+          {
+            "type": "image",
+            "url": "http://i.groupme.com/123456789"
+          },
+          {
+            "type": "image",
+            "url": "http://i.groupme.com/123456789"
+          },
+          {
+            "type": "location",
+            "lat": "40.738206",
+            "lng": "-73.993285",
+            "name": "GroupMe HQ"
+          },
+          {
+            "type": "split",
+            "token": "SPLIT_TOKEN"
+          },
+          {
+            "type": "emoji",
+            "placeholder": "☃",
+            "charmap": [
+              [
+                1,
+                42
+              ],
+              [
+                2,
+                34
+              ]
+            ]
+          }
+        ]
       }
     }
   }
