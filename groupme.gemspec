@@ -19,15 +19,15 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
 
   gem.add_development_dependency 'rake'
-  gem.add_development_dependency 'rspec'
+  gem.add_development_dependency 'rspec', '~> 2.0'
   gem.add_development_dependency 'webmock'
   gem.add_development_dependency 'yard'
   gem.add_development_dependency 'redcarpet', '~> 2.0'
   gem.add_development_dependency 'pry'
   gem.add_development_dependency 'json', '~> 1.7'
 
-  gem.add_dependency 'faraday', '~> 0.8'
-  gem.add_dependency 'faraday_middleware', '~> 0.8'
+  gem.add_dependency 'faraday', '~> 0.8.8'
+  gem.add_dependency 'faraday_middleware', '~> 0.9.0'
   gem.add_dependency 'hashie', '~> 2.0'
   gem.add_dependency 'multi_json', '~> 1.3'
   gem.add_dependency 'simple_oauth', '~> 0.2'
