@@ -16,7 +16,8 @@ module GroupMe
         }
       }
       data[:message][:attachments] = attachments if attachments.any?
-      post("/groups/#{group_id}/messages", data).message
+      response = post("/groups/#{group_id}/messages", data)
+      response.env[:body].response.message
     end
 
     # List messages for a group
