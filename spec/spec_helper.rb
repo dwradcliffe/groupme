@@ -19,12 +19,13 @@ def fixture(file)
   MultiJson.load(File.read(fixture_path + '/' + file))
 end
 
-def json_response(file)
+def json_response(file, status = 200)
   {
+    :status => status,
     :body => {
       :response => fixture(file),
       :meta => {
-        :code => 200,
+        :code => status,
         :errors => []
       }
     },

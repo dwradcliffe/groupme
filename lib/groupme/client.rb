@@ -33,7 +33,7 @@ module GroupMe
 
       def request(method, path, data={})
         res = connection.send(method, "v3/#{path}", data)
-        if res.status == 200 and !res.body.nil?
+        if res.success? and !res.body.nil?
           return res.body.response
         else
           return res
