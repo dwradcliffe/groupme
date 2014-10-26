@@ -6,9 +6,14 @@
     "user_id": "1234567890",
     "group_id": "1234567890",
     "name": "John",
-    "avatar_url": "http://i.groupme.com/123456789.jpg",
-    "text": "Hello world",
+    "avatar_url": "http://i.groupme.com/123456789",
+    "text": "Hello world ☃☃",
     "system": true,
+    "favorited_by": [
+      "101",
+      "66",
+      "1234567890"
+    ],
     "attachments": [
       {
         "type": "location",
