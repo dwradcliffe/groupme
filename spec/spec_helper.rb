@@ -1,6 +1,7 @@
 require 'groupme'
 require 'multi_json'
 require 'webmock/rspec'
+require 'timecop'
 
 def stub_get(url)
   stub_request(:get, "https://api.groupme.com/v3#{url}")

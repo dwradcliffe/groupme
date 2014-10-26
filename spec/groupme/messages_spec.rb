@@ -29,10 +29,18 @@ describe GroupMe::Messages do
 
   describe ".create_message" do
 
+    before do
+      Timecop.freeze('2014-10-25 22:36:02 -0400')
+    end
+
+    after do
+      Timecop.return
+    end
+
     it "sends a text only message to a group" do
       message = {
         :message => {
-          :source_guid => "GUID",
+          :source_guid => '2014-10-25 22:36:02 -0400',
           :text => "Hello world ☃☃",
         }
       }
@@ -44,7 +52,7 @@ describe GroupMe::Messages do
     it "sends a message with location to a group" do
       message = {
         :message => {
-          :source_guid => "GUID",
+          :source_guid => '2014-10-25 22:36:02 -0400',
           :text => "Hello world ☃☃",
           :attachments => [
             {

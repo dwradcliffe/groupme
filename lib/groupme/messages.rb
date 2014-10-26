@@ -11,7 +11,7 @@ module GroupMe
     def create_message(group_id, text, attachments=[])
       data = {
         :message => {
-          :source_guid => "GUID",
+          :source_guid => Time.now.to_s,
           :text => text
         }
       }
