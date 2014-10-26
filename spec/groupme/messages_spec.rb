@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 require 'spec_helper'
 
 describe GroupMe::Messages do
@@ -20,7 +22,7 @@ describe GroupMe::Messages do
     it "returns messages for a group" do
       stub_get("/groups/1/messages").to_return(json_response("messages.json"))
       messages = @client.messages(1)
-      expect(messages.first.text).to eq("Hello world")
+      expect(messages.first.text).to eq("Hello world ☃☃")
     end
 
   end
@@ -31,19 +33,19 @@ describe GroupMe::Messages do
       message = {
         :message => {
           :source_guid => "GUID",
-          :text => "Hello world",
+          :text => "Hello world ☃☃",
         }
       }
       stub_post("/groups/1/messages", message).to_return(json_response("message.json"))
-      message = @client.create_message(1, "Hello world")
-      expect(message.text).to eq("Hello world")
+      message = @client.create_message(1, "Hello world ☃☃")
+      expect(message.text).to eq("Hello world ☃☃")
     end
 
     it "sends a message with location to a group" do
       message = {
         :message => {
           :source_guid => "GUID",
-          :text => "Hello world",
+          :text => "Hello world ☃☃",
           :attachments => [
             {
               :type => "location",
@@ -55,10 +57,10 @@ describe GroupMe::Messages do
         }
       }
       stub_post("/groups/1/messages", message).to_return(json_response("message_with_location.json"))
-      
+
       att = { :type => "location", :lat => "40.738206", :lng => "-73.993285", :name => "GroupMe HQ" }
-      message = @client.create_message(1, "Hello world", [att])
-      expect(message.text).to eq("Hello world")
+      message = @client.create_message(1, "Hello world ☃☃", [att])
+      expect(message.text).to eq("Hello world ☃☃")
       expect(message.attachments.count).to eq(1)
       expect(message.attachments.first.type).to eq("location")
       expect(message.attachments.first.lat).to eq("40.738206")
