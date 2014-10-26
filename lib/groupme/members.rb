@@ -41,5 +41,15 @@ module GroupMe
       post("/groups/#{group_id}/members/#{member_id}/remove").status == 200
     end
 
+    # Get the membership results from an add call
+    #
+    # @return [Array<Hashie::Mash>] Array of hashes representing members
+    # @see https://dev.groupme.com/docs/v3#members_results
+    # @param group_id [String, Integer] Id of the group
+    # @param results_id [String, Integer] Id of the results set
+    def membership_results(group_id, results_id)
+      get("/groups/#{group_id}/members/results/#{results_id}").members
+    end
+
   end
 end

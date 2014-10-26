@@ -21,6 +21,18 @@ describe GroupMe::Members do
 
   end
 
+  describe '.membership_results' do
+
+    it 'lists membership results from an add call' do
+      stub_get('/groups/123/members/results/456').to_return(json_response('members.json'))
+      response = @client.membership_results(123, 456)
+      expect(response.length).to eq(2)
+      expect(response.first.nickname).to eq('John')
+      expect(response.last.guid).to eq('GUID-2')
+    end
+
+  end
+
   describe ".add_members" do
 
     it "adds a list of members to a group" do

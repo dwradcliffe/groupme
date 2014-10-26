@@ -1,0 +1,24 @@
+{
+  "members": [
+    {
+      "id": "1000",
+      "user_id": "10000",
+      "nickname": "John",
+      "muted": false,
+      "image_url": "http://i.groupme.com/AVATAR",
+      "autokicked": false,
+      "app_installed": true,
+      "guid": "GUID-1"
+    },
+    {
+      "id": "2000",
+      "user_id": "20000",
+      "nickname": "Anne",
+      "muted": false,
+      "image_url": "http://i.groupme.com/AVATAR",
+      "autokicked": false,
+      "app_installed": true,
+      "guid": "GUID-2"
+    }
+  ]
+}
