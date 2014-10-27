@@ -1,6 +1,5 @@
 module GroupMe
   module Messages
-
     # Create a message for a group
     #
     # @return [Hashie::Mash] Hash representing the message
@@ -36,6 +35,5 @@ module GroupMe
       get("/groups/#{group_id}/messages")['count']
     end
     alias :message_count :messages_count
-
   end
 end

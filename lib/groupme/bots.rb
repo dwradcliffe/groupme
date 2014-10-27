@@ -1,6 +1,5 @@
 module GroupMe
   module Bots
-
     # List the authenticated user's bots.
     #
     # @return [Array<Hashie::Mash>] Array of hashes representing bots.
@@ -23,6 +22,5 @@ module GroupMe
     def bot(id)
       get("/bots/#{id}")
     end
-
   end
 end

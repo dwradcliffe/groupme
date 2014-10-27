@@ -1,6 +1,5 @@
 module GroupMe
   module Users
-
     # Get details about the authenticated user
     #
     # @return [Hashie::Mash] Hash representing the user
@@ -8,6 +7,5 @@ module GroupMe
     def me
       get("/users/me")
     end
-
   end
 end

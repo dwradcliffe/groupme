@@ -8,7 +8,6 @@ require 'faraday_middleware'
 
 module GroupMe
   class Client
-
     def initialize(options={})
       @token = options[:token].to_s
       raise ArgumentError, ":token can't be blank" if @token.empty?
@@ -56,6 +55,5 @@ module GroupMe
           f.adapter Faraday.default_adapter
         end
       end
-
   end
 end

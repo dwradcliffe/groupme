@@ -1,6 +1,5 @@
 module GroupMe
   module Groups
-
     # List the authenticated user's active groups.
     #
     # @return [Array<Hashie::Mash>] Array of hashes representing groups.
@@ -80,6 +79,5 @@ module GroupMe
     def join_group(group_id, share_token)
       post("/groups/#{group_id}/join/#{share_token}").status == 200
     end
-
   end
 end

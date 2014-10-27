@@ -1,6 +1,5 @@
 module GroupMe
   module Likes
-
     # Like a message
     #
     # @return [Boolean] Success/Failure
@@ -16,6 +15,5 @@ module GroupMe
     def destroy_like(group_id, message_id)
       post("/messages/#{group_id}/#{message_id}/unlike").status == 200
     end
-
   end
 end

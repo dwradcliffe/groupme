@@ -1,6 +1,5 @@
 module GroupMe
   module Members
-
     # Add members to a group
     #
     # @return [Boolean] Success/Failure
@@ -50,6 +49,5 @@ module GroupMe
     def membership_results(group_id, results_id)
       get("/groups/#{group_id}/members/results/#{results_id}").members
     end
-
   end
 end
