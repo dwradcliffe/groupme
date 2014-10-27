@@ -40,11 +40,11 @@ describe GroupMe::Members do
         :nickname => "Mom",
         :user_id => "1234567890",
         :guid => "SOME_GUID"
-      },{
+      }, {
         :nickname => "Dad",
         :phone_number => "+1 2123001234",
         :guid => "SOME_GUID"
-      },{
+      }, {
         :nickname => "Jane",
         :email => "jane@example.com",
         :guid => "SOME_GUID"
