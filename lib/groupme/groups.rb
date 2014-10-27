@@ -10,7 +10,7 @@ module GroupMe
     def groups
       get '/groups'
     end
-    alias :list_groups :groups
+    alias_method :list_groups, :groups
 
     # Load a specific group.
     #
@@ -34,7 +34,7 @@ module GroupMe
     def former_groups
       get '/groups/former'
     end
-    alias :list_former_groups :former_groups
+    alias_method :list_former_groups, :former_groups
 
     # Create a new group.
     #
