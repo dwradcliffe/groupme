@@ -8,7 +8,7 @@ Gem::Specification.new do |gem|
   gem.version       = GroupMe::VERSION
   gem.authors       = ['David Radcliffe']
   gem.email         = ['radcliffe.david@gmail.com']
-  gem.description   = %q{Simple wrapper for the GroupMe v3 API}
+  gem.description   = 'Simple wrapper for the GroupMe v3 API'
   gem.summary       = gem.description
   gem.homepage      = 'https://github.com/dwradcliffe/groupme'
   gem.licenses      = ['MIT']
