@@ -12,7 +12,7 @@ namespace :doc do
     task.files   = ['README.md', 'LICENSE.md', 'lib/**/*.rb']
     task.options = [
       '--output-dir', 'doc/yard',
-      '--markup', 'markdown',
+      '--markup', 'markdown'
     ]
   end
 end

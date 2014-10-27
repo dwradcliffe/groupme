@@ -41,7 +41,7 @@ describe GroupMe::Messages do
       message = {
         :message => {
           :source_guid => '2014-10-25 22:33:44 +0000',
-          :text => 'Hello world ☃☃',
+          :text => 'Hello world ☃☃'
         }
       }
       stub_post('/groups/1/messages', message).to_return(json_response('message.json', 201))
