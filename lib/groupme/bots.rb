@@ -24,6 +24,5 @@ module GroupMe
       get("/bots/#{id}")
     end
 
-
   end
 end
