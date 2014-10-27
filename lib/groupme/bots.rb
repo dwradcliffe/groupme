@@ -8,7 +8,7 @@ module GroupMe
     #   client = GroupMe::Client.new
     #   client.bots
     def bots
-      get("/bots")
+      get('/bots')
     end
     alias :list_bots :bots
 

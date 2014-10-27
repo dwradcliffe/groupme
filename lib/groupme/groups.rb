@@ -8,7 +8,7 @@ module GroupMe
     #   client = GroupMe::Client.new
     #   client.groups
     def groups
-      get "/groups"
+      get '/groups'
     end
     alias :list_groups :groups
 

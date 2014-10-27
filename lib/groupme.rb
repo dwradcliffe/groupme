@@ -1,5 +1,5 @@
-require "groupme/version"
-require "groupme/client"
+require 'groupme/version'
+require 'groupme/client'
 
 module GroupMe
   USER_AGENT = "dwradcliffe/groupme/#{GroupMe::VERSION}"
