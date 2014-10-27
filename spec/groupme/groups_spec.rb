@@ -39,7 +39,7 @@ describe GroupMe::Groups do
   describe ".create_group" do
 
     it "creates a group" do
-      stub_post("/groups", {:name => "Family"}).to_return(json_response("group.json"))
+      stub_post("/groups", :name => "Family").to_return(json_response("group.json"))
       group = @client.create_group("Family")
       expect(group.name).to eq("Family")
     end
