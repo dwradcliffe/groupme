@@ -10,7 +10,7 @@ module GroupMe
   class Client
     def initialize(options = {})
       @token = options[:token].to_s
-      raise ArgumentError, ":token can't be blank" if @token.empty?
+      fail ArgumentError, ":token can't be blank" if @token.empty?
     end
 
     include GroupMe::Groups
