@@ -7,7 +7,7 @@ module GroupMe
     # @param group_id [String, Integer] Id of the group
     # @param text [String] Text of the message
     # @param attachments [Array<Hash>] Array of attachments
-    def create_message(group_id, text, attachments=[])
+    def create_message(group_id, text, attachments = [])
       data = {
         :message => {
           :source_guid => Time.now.to_s,

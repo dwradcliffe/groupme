@@ -45,7 +45,7 @@ module GroupMe
     # @option options [String] :description Description of the group
     # @option options [String] :image_url GroupMe Image Service URL
     # @option options [Boolean] :share If you pass a true value, a share URL will be generated
-    def create_group(name, options={})
+    def create_group(name, options = {})
       options.merge! :name => name
       post '/groups', options
     end

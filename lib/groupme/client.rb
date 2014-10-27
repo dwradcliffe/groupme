@@ -8,7 +8,7 @@ require 'faraday_middleware'
 
 module GroupMe
   class Client
-    def initialize(options={})
+    def initialize(options = {})
       @token = options[:token].to_s
       raise ArgumentError, ":token can't be blank" if @token.empty?
     end
@@ -26,11 +26,11 @@ module GroupMe
       request(:get, path)
     end
 
-    def post(path, data={})
+    def post(path, data = {})
       request(:post, path, data)
     end
 
-    def request(method, path, data={})
+    def request(method, path, data = {})
       res = connection.send(method, "v3/#{path}", data)
       if res.success? and !res.body.empty?
         return res.body.response
