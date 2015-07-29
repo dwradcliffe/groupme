@@ -26,4 +26,20 @@ describe GroupMe::Bots do
 
   end
 
+  describe '.create_bot' do
+
+    it 'creates a new bot' do
+      data = {
+        :bot => {
+          :name => 'hal9000',
+          :group_id => 1234567890
+        }
+      }
+      stub_post('/bots', data).to_return(json_response('bot.json', 201))
+      bot = @client.create_bot('hal9000', 1234567890)
+      expect(bot.name).to eq('hal9000')
+    end
+
+  end
+
 end
