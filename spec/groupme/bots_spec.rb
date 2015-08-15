@@ -42,4 +42,17 @@ describe GroupMe::Bots do
 
   end
 
+  describe '.destroy_bot' do
+
+    it 'destroys a bot' do
+      data = {
+        :bot_id => 1234567890
+      }
+      stub_post('/bots/destroy', data).to_return(:status => 200)
+      response = @client.destroy_bot(1234567890)
+      expect(response).to eq(true)
+    end
+
+  end
+
 end

@@ -37,5 +37,17 @@ module GroupMe
       }
       post('/bots', data)
     end
+
+    # Remove a bot.
+    #
+    # @return [Boolean] Success/Failure
+    # @see https://dev.groupme.com/docs/v3#bots_destroy
+    # @param id [String, Integer] ID of the bot
+    def destroy_bot(id)
+      data = {
+        :bot_id => id
+      }
+      post('/bots/destroy', data).status == 200
+    end
   end
 end
