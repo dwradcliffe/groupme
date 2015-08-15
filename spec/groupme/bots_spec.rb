@@ -16,16 +16,6 @@ describe GroupMe::Bots do
 
   end
 
-  describe '.bot' do
-
-    it 'returns the matching bot' do
-      stub_get('/bots/1234567890').to_return(json_response('bot.json'))
-      bot = @client.bot(1234567890)
-      expect(bot.name).to eq('hal9000')
-    end
-
-  end
-
   describe '.create_bot' do
 
     it 'creates a new bot' do

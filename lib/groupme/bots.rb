@@ -12,17 +12,6 @@ module GroupMe
     end
     alias_method :list_bots, :bots
 
-    # Get a single bot.
-    #
-    # @return [Hashie::Mash] Hash representing the bot.
-    # @see https://dev.groupme.com/docs/v3#bots_show
-    # @example
-    #   client = GroupMe::Client.new
-    #   client.bot(32)
-    def bot(id)
-      get("/bots/#{id}")
-    end
-
     # Create a new bot.
     #
     # @return [Hashie::Mash] Hash representing the bot.
