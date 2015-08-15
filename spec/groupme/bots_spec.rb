@@ -16,6 +16,20 @@ describe GroupMe::Bots do
 
   end
 
+  describe '.bot_post' do
+
+    it 'posts a message to a group' do
+      data = {
+        :bot_id => 1234567890,
+        :text => 'Test message'
+      }
+      stub_post('/bots/post', data).to_return(:status => 202, :body => ' ')
+      response = @client.bot_post(1234567890, 'Test message')
+      expect(response).to eq(true)
+    end
+
+  end
+
   describe '.create_bot' do
 
     it 'creates a new bot' do

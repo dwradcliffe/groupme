@@ -12,6 +12,22 @@ module GroupMe
     end
     alias_method :list_bots, :bots
 
+    # Post a message from a bot.
+    #
+    # @return [Boolean] Success/Failure
+    # @see https://dev.groupme.com/docs/v3#bots_post
+    # @param id [String, Integer] ID of the bot
+    # @param text [String] Text to send to the group
+    # @option options [String] :picture_url Picture URL from image service
+    def bot_post(id, text, options = {})
+      data = {
+        :bot_id => id,
+        :text => text
+      }
+      data[:options] = options if options.any?
+      post('/bots/post', data).status == 202
+    end
+
     # Create a new bot.
     #
     # @return [Hashie::Mash] Hash representing the bot.
