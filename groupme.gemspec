@@ -25,6 +25,7 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency 'pry'
   gem.add_development_dependency 'json', '~> 1.7'
   gem.add_development_dependency 'timecop', '~> 0.7'
+  gem.add_development_dependency 'rubocop', '~> 0.33'
 
   gem.add_dependency 'faraday', '~> 0.9.0'
   gem.add_dependency 'faraday_middleware', '~> 0.9.0'

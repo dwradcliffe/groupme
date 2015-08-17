@@ -1,3 +1,7 @@
+AllCops:
+  DisplayCopNames: true
+  DisplayStyleGuide: true
+
 Style/Documentation:
   Enabled: false
 Style/HashSyntax:
@@ -9,4 +13,6 @@ Metrics/LineLength:
 Style/NumericLiterals:
   Enabled: false
 Style/SpecialGlobalVars:
+  Enabled: false
+Style/EmptyLinesAroundBlockBody:
   Enabled: false

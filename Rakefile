@@ -3,8 +3,14 @@ require 'bundler/gem_tasks'
 require 'rspec/core/rake_task'
 RSpec::Core::RakeTask.new(:spec)
 
-task :test => :spec
+task :test => [:spec, :rubocop]
 task :default => :spec
+
+require 'rubocop/rake_task'
+desc 'Execute rubocop'
+RuboCop::RakeTask.new(:rubocop) do |task|
+  task.fail_on_error = true
+end
 
 namespace :doc do
   require 'yard'
