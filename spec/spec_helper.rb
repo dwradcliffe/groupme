@@ -28,7 +28,7 @@ def json_response(file, status = 200)
         :code => status,
         :errors => []
       }
-    },
+    }.to_json,
     :headers => {
       :content_type => 'application/json; charset=utf-8'
     }
