@@ -1,3 +1,5 @@
+require 'securerandom'
+
 module GroupMe
   module Messages
     # Create a message for a group
@@ -10,7 +12,7 @@ module GroupMe
     def create_message(group_id, text, attachments = [])
       data = {
         :message => {
-          :source_guid => Time.now.to_s,
+          :source_guid => SecureRandom.uuid,
           :text => text
         }
       }
