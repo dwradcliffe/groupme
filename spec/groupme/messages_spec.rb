@@ -6,6 +6,7 @@ describe GroupMe::Messages do
 
   before do
     @client = GroupMe::Client.new(:token => 'TEST')
+    allow(SecureRandom).to receive(:uuid).and_return('GUID')
   end
 
   describe '.message_count' do
@@ -29,18 +30,10 @@ describe GroupMe::Messages do
 
   describe '.create_message' do
 
-    before do
-      Timecop.freeze(Time.new(2014, 10, 25, 22, 33, 44, 0000))
-    end
-
-    after do
-      Timecop.return
-    end
-
     it 'sends a text only message to a group' do
       message = {
         :message => {
-          :source_guid => '2014-10-25 22:33:44 +0000',
+          :source_guid => 'GUID',
           :text => 'Hello world ☃☃'
         }
       }
@@ -52,7 +45,7 @@ describe GroupMe::Messages do
     it 'sends a message with location to a group' do
       message = {
         :message => {
-          :source_guid => '2014-10-25 22:33:44 +0000',
+          :source_guid => 'GUID',
           :text => 'Hello world ☃☃',
           :attachments => [
             {
