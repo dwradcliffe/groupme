@@ -42,7 +42,7 @@ module GroupMe
     def messages_count(group_id)
       get("/groups/#{group_id}/messages")['count']
     end
-    alias_method :message_count, :messages_count
+    alias message_count messages_count
 
     private
 

@@ -10,7 +10,7 @@ module GroupMe
     def bots
       get('/bots')
     end
-    alias_method :list_bots, :bots
+    alias list_bots bots
 
     # Post a message from a bot.
     #
