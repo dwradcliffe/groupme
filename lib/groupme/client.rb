@@ -22,8 +22,8 @@ module GroupMe
 
     private
 
-    def get(path)
-      request(:get, path)
+    def get(path, options = {})
+      request(:get, path, options)
     end
 
     def post(path, data = {})
@@ -33,9 +33,9 @@ module GroupMe
     def request(method, path, data = {})
       res = connection.send(method, "v3/#{path}", data)
       if res.success? && !res.body.empty? && res.body != ' '
-        return res.body.response
+        res.body.response
       else
-        return res
+        res
       end
     end
 

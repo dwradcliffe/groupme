@@ -25,8 +25,14 @@ module GroupMe
     # @return [Array<Hashie::Mash>] Array of hashes representing the messages
     # @see https://dev.groupme.com/docs/v3#messages_index
     # @param group_id [String, Integer] Id of the group
-    def messages(group_id)
-      get("/groups/#{group_id}/messages").messages
+    # @param options [Hash] options hash that will be passed to the groupme call
+    # @param fetch_all [Boolean] if true, fetches all messages for the group
+    def messages(group_id, options = {}, fetch_all = false)
+      if fetch_all
+        get_all_messages(group_id)
+      else
+        get_messages(group_id, options)
+      end
     end
 
     # Get number of messages for a group
@@ -36,6 +42,27 @@ module GroupMe
     def messages_count(group_id)
       get("/groups/#{group_id}/messages")['count']
     end
-    alias_method :message_count, :messages_count
+    alias message_count messages_count
+
+    private
+
+    def get_all_messages(group_id)
+      messages = []
+      last_id = ''
+      loop do
+        selection = get_messages(group_id, :before_id => last_id)
+        break if selection.empty?
+
+        last_id = selection.last.id
+        messages << selection
+      end
+
+      messages
+    end
+
+    def get_messages(group_id, options = {})
+      results = get("/groups/#{group_id}/messages", options)
+      results.is_a?(Faraday::Response) ? [] : results.messages
+    end
   end
 end

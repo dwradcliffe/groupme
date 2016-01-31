@@ -10,7 +10,7 @@ module GroupMe
     def groups
       get '/groups'
     end
-    alias_method :list_groups, :groups
+    alias list_groups groups
 
     # Load a specific group.
     #
@@ -34,7 +34,7 @@ module GroupMe
     def former_groups
       get '/groups/former'
     end
-    alias_method :list_former_groups, :former_groups
+    alias list_former_groups former_groups
 
     # Create a new group.
     #
@@ -46,7 +46,7 @@ module GroupMe
     # @option options [String] :image_url GroupMe Image Service URL
     # @option options [Boolean] :share If you pass a true value, a share URL will be generated
     def create_group(name, options = {})
-      options.merge! :name => name
+      options[:name] = name
       post '/groups', options
     end
 
