@@ -16,3 +16,7 @@ Style/SpecialGlobalVars:
   Enabled: false
 Style/EmptyLinesAroundBlockBody:
   Enabled: false
+
+# Disabled until RuboCop > 0.36.0
+Style/FrozenStringLiteralComment:
+  Enabled: false
