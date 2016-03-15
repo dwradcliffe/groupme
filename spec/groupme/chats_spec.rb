@@ -10,8 +10,8 @@ describe GroupMe::Chats do
 
     it "returns user's groups" do
       stub_get('/chats').to_return(json_response('chats.json'))
-      groups = @client.chats
-      expect(groups.first.last_message.name).to eq('John Doe')
+      chats = @client.chats
+      expect(chats.first.last_message.name).to eq('John Doe')
     end
 
   end

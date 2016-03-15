@@ -11,4 +11,3 @@ module GroupMe
     end
   end
 end
-
