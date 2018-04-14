@@ -35,7 +35,7 @@ module GroupMe
     end
 
     def request(method, path, data = {})
-      res = connection.send(method, "v3/#{path}", data)
+      res = connection.send(method, "v3#{path}", data)
       if res.success? && !res.body.empty? && res.body != ' '
         res.body.response
       else
@@ -47,7 +47,7 @@ module GroupMe
     #
     # @return [Faraday::Connection]
     def connection
-      @connection ||= Faraday.new 'https://api.groupme.com' do |f|
+      @connection ||= Faraday.new 'https://api.groupme.com/' do |f|
         f.request :json
         f.headers[:user_agent] = GroupMe::USER_AGENT
         f.headers['X-Access-Token'] = @token
