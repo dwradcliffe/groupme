@@ -47,7 +47,7 @@ module GroupMe
     #
     # @return [Faraday::Connection]
     def connection
-      @connection ||= Faraday.new 'https://api.groupme.com/' do |f|
+      @connection ||= Faraday.new 'https://api.groupme.com' do |f|
         f.request :json
         f.headers[:user_agent] = GroupMe::USER_AGENT
         f.headers['X-Access-Token'] = @token
