@@ -2,7 +2,7 @@ module GroupMe
   module Groups
     # List the authenticated user's active groups.
     #
-    # @return [Array<Hashie::Mash>] Array of hashes representing groups.
+    # @return [Array<Response>] Array of hashes representing groups.
     # @see https://dev.groupme.com/docs/v3#groups_index
     # @example
     #   client = GroupMe::Client.new
@@ -14,7 +14,7 @@ module GroupMe
 
     # Load a specific group.
     #
-    # @return [Hashie::Mash] Hash representing the group.
+    # @return [Response] Hash representing the group.
     # @see https://dev.groupme.com/docs/v3#groups_show
     # @param id [String, Integer] The ID of the group
     # @example
@@ -26,7 +26,7 @@ module GroupMe
 
     # List the authenticated user's former groups.
     #
-    # @return [Array<Hashie::Mash>] Array of hashes representing groups.
+    # @return [Array<Response>] Array of hashes representing groups.
     # @see https://dev.groupme.com/docs/v3#groups_index_former
     # @example
     #   client = GroupMe::Client.new
@@ -38,7 +38,7 @@ module GroupMe
 
     # Create a new group.
     #
-    # @return [Hashie::Mash] Hash representing the group
+    # @return [Response] Hash representing the group
     # @see https://dev.groupme.com/docs/v3#groups_create
     # @param name [String] Name for the new group
     # @param options [Hash] Group information
@@ -52,7 +52,7 @@ module GroupMe
 
     # Update a group after creation
     #
-    # @return [Hashie::Mash] Hash representing the group
+    # @return [Response] Hash representing the group
     # @see https://dev.groupme.com/docs/v3#groups_update
     # @param name [Integer] Group ID
     # @param data [Hash] Group information

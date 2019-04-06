@@ -42,7 +42,7 @@ module GroupMe
 
     # Get the membership results from an add call
     #
-    # @return [Array<Hashie::Mash>] Array of hashes representing members
+    # @return [Array<Response>] Array of hashes representing members
     # @see https://dev.groupme.com/docs/v3#members_results
     # @param group_id [String, Integer] Id of the group
     # @param results_id [String, Integer] Id of the results set

@@ -2,7 +2,7 @@ module GroupMe
   module Bots
     # List the authenticated user's bots.
     #
-    # @return [Array<Hashie::Mash>] Array of hashes representing bots.
+    # @return [Array<Response>] Array of hashes representing bots.
     # @see https://dev.groupme.com/docs/v3#bots_index
     # @example
     #   client = GroupMe::Client.new
@@ -30,7 +30,7 @@ module GroupMe
 
     # Create a new bot.
     #
-    # @return [Hashie::Mash] Hash representing the bot.
+    # @return [Response] Hash representing the bot.
     # @see https://dev.groupme.com/docs/v3#bots_create
     # @param name [String] Name for the new bot
     # @param group_id [String, Integer] ID of the group
