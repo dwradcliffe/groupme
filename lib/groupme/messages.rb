@@ -4,7 +4,7 @@ module GroupMe
   module Messages
     # Create a message for a group
     #
-    # @return [Hashie::Mash] Hash representing the message
+    # @return [Response] Hash representing the message
     # @see https://dev.groupme.com/docs/v3#messages_create
     # @param group_id [String, Integer] Id of the group
     # @param text [String] Text of the message
@@ -22,7 +22,7 @@ module GroupMe
 
     # List messages for a group
     #
-    # @return [Array<Hashie::Mash>] Array of hashes representing the messages
+    # @return [Array<Response>] Array of hashes representing the messages
     # @see https://dev.groupme.com/docs/v3#messages_index
     # @param group_id [String, Integer] Id of the group
     # @param options [Hash] options hash that will be passed to the groupme call
