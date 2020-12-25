@@ -12,7 +12,7 @@ module GroupMe
     # @option members [String] :email
     # @option members [String] :guid
     def add_members(id, members)
-      post("/groups/#{id}/members/add", members).status == 202
+      post("groups/#{id}/members/add", members).status == 202
     end
 
     # Add member to a group
@@ -27,7 +27,7 @@ module GroupMe
     # @option member [String] :email
     # @option member [String] :guid
     def add_member(id, member)
-      post("/groups/#{id}/members/add", [member]).status == 202
+      post("groups/#{id}/members/add", [member]).status == 202
     end
 
     # Remove a member from a group
@@ -37,7 +37,7 @@ module GroupMe
     # @param group_id [String, Integer] Id of the group
     # @param member_id [String, Integer] Id of the member
     def remove_member(group_id, member_id)
-      post("/groups/#{group_id}/members/#{member_id}/remove").status == 200
+      post("groups/#{group_id}/members/#{member_id}/remove").status == 200
     end
 
     # Get the membership results from an add call
@@ -47,7 +47,7 @@ module GroupMe
     # @param group_id [String, Integer] Id of the group
     # @param results_id [String, Integer] Id of the results set
     def membership_results(group_id, results_id)
-      get("/groups/#{group_id}/members/results/#{results_id}").members
+      get("groups/#{group_id}/members/results/#{results_id}").members
     end
   end
 end

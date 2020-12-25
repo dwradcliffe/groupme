@@ -8,7 +8,7 @@ module GroupMe
     #   client = GroupMe::Client.new
     #   client.bots
     def bots
-      get('/bots')
+      get('bots')
     end
     alias list_bots bots
 
@@ -25,7 +25,7 @@ module GroupMe
         :text => text
       }
       data[:options] = options if options.any?
-      post('/bots/post', data).status == 202
+      post('bots/post', data).status == 202
     end
 
     # Create a new bot.
@@ -40,7 +40,7 @@ module GroupMe
       data = {
         :bot => options.merge(:name => name, :group_id => group_id)
       }
-      post('/bots', data)
+      post('bots', data)
     end
 
     # Remove a bot.
@@ -52,7 +52,7 @@ module GroupMe
       data = {
         :bot_id => id
       }
-      post('/bots/destroy', data).status == 200
+      post('bots/destroy', data).status == 200
     end
   end
 end
