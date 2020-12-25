@@ -9,7 +9,7 @@ describe GroupMe::Bots do
   describe '.bots' do
 
     it "returns user's bots" do
-      stub_get('/bots').to_return(json_response('bots.json'))
+      stub_get('bots').to_return(json_response('bots.json'))
       bots = @client.bots
       expect(bots.first.name).to eq('hal9000')
     end
@@ -23,7 +23,7 @@ describe GroupMe::Bots do
         :bot_id => 1234567890,
         :text => 'Test message'
       }
-      stub_post('/bots/post', data).to_return(:status => 202, :body => ' ')
+      stub_post('bots/post', data).to_return(:status => 202, :body => ' ')
       response = @client.bot_post(1234567890, 'Test message')
       expect(response).to eq(true)
     end
@@ -39,7 +39,7 @@ describe GroupMe::Bots do
           :group_id => 1234567890
         }
       }
-      stub_post('/bots', data).to_return(json_response('bot.json', 201))
+      stub_post('bots', data).to_return(json_response('bot.json', 201))
       bot = @client.create_bot('hal9000', 1234567890)
       expect(bot.name).to eq('hal9000')
     end
@@ -52,7 +52,7 @@ describe GroupMe::Bots do
       data = {
         :bot_id => 1234567890
       }
-      stub_post('/bots/destroy', data).to_return(:status => 200)
+      stub_post('bots/destroy', data).to_return(:status => 200)
       response = @client.destroy_bot(1234567890)
       expect(response).to eq(true)
     end

@@ -9,7 +9,7 @@ describe GroupMe::Users do
   describe '.me' do
 
     it 'gets details about the authenticated user' do
-      stub_get('/users/me').to_return(json_response('user.json'))
+      stub_get('users/me').to_return(json_response('user.json'))
       response = @client.me
       expect(response.name).to eq('Ronald Swanson')
     end

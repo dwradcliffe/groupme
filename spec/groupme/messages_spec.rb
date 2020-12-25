@@ -12,7 +12,7 @@ describe GroupMe::Messages do
   describe '.message_count' do
 
     it 'returns the number of messages for a group' do
-      stub_get('/groups/1/messages').to_return(json_response('messages.json'))
+      stub_get('groups/1/messages').to_return(json_response('messages.json'))
       expect(@client.message_count(1)).to eq(123)
     end
 
@@ -21,7 +21,7 @@ describe GroupMe::Messages do
   describe '.messages' do
 
     it 'returns messages for a group' do
-      stub_get('/groups/1/messages').to_return(json_response('messages.json'))
+      stub_get('groups/1/messages').to_return(json_response('messages.json'))
       messages = @client.messages(1)
       expect(messages.first.text).to eq('Hello world ☃☃')
     end
@@ -37,7 +37,7 @@ describe GroupMe::Messages do
           :text => 'Hello world ☃☃'
         }
       }
-      stub_post('/groups/1/messages', message).to_return(json_response('message.json', 201))
+      stub_post('groups/1/messages', message).to_return(json_response('message.json', 201))
       message = @client.create_message(1, 'Hello world ☃☃')
       expect(message.text).to eq('Hello world ☃☃')
     end
@@ -57,7 +57,7 @@ describe GroupMe::Messages do
           ]
         }
       }
-      stub_post('/groups/1/messages', message).to_return(json_response('message_with_location.json', 201))
+      stub_post('groups/1/messages', message).to_return(json_response('message_with_location.json', 201))
 
       att = { :type => 'location', :lat => '40.738206', :lng => '-73.993285', :name => 'GroupMe HQ' }
       message = @client.create_message(1, 'Hello world ☃☃', [att])

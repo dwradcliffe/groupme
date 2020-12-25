@@ -8,7 +8,7 @@ module GroupMe
     #   client = GroupMe::Client.new
     #   client.groups
     def groups
-      get '/groups'
+      get 'groups'
     end
     alias list_groups groups
 
@@ -21,7 +21,7 @@ module GroupMe
     #   client = GroupMe::Client.new
     #   client.group(32)
     def group(id)
-      get "/groups/#{id}"
+      get "groups/#{id}"
     end
 
     # List the authenticated user's former groups.
@@ -32,7 +32,7 @@ module GroupMe
     #   client = GroupMe::Client.new
     #   client.former_groups
     def former_groups
-      get '/groups/former'
+      get 'groups/former'
     end
     alias list_former_groups former_groups
 
@@ -47,7 +47,7 @@ module GroupMe
     # @option options [Boolean] :share If you pass a true value, a share URL will be generated
     def create_group(name, options = {})
       options[:name] = name
-      post '/groups', options
+      post 'groups', options
     end
 
     # Update a group after creation
@@ -61,7 +61,7 @@ module GroupMe
     # @option data [String] :image_url GroupMe Image Service URL
     # @option options [Boolean] :share If you pass a true value, a share URL will be generated
     def update_group(group_id, data)
-      post "/groups/#{group_id}/update", data
+      post "groups/#{group_id}/update", data
     end
 
     # Disband a group
@@ -69,7 +69,7 @@ module GroupMe
     # @return [Boolean] Success/Failure
     # @see https://dev.groupme.com/docs/v3#groups_destroy
     def destroy_group(group_id)
-      post("/groups/#{group_id}/destroy").status == 200
+      post("groups/#{group_id}/destroy").status == 200
     end
 
     # Join a shared group
@@ -77,7 +77,7 @@ module GroupMe
     # @return [Boolean] Success/Failure
     # @see https://dev.groupme.com/docs/v3#groups_join
     def join_group(group_id, share_token)
-      post("/groups/#{group_id}/join/#{share_token}").status == 200
+      post("groups/#{group_id}/join/#{share_token}").status == 200
     end
   end
 end

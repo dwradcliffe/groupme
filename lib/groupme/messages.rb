@@ -17,7 +17,7 @@ module GroupMe
         }
       }
       data[:message][:attachments] = attachments if attachments.any?
-      post("/groups/#{group_id}/messages", data).message
+      post("groups/#{group_id}/messages", data).message
     end
 
     # List messages for a group
@@ -40,7 +40,7 @@ module GroupMe
     # @return [Integer] Number of messages
     # @param group_id [String, Integer] Id of the group
     def messages_count(group_id)
-      get("/groups/#{group_id}/messages")['count']
+      get("groups/#{group_id}/messages")['count']
     end
     alias message_count messages_count
 
@@ -61,7 +61,7 @@ module GroupMe
     end
 
     def get_messages(group_id, options = {})
-      results = get("/groups/#{group_id}/messages", options)
+      results = get("groups/#{group_id}/messages", options)
       results.is_a?(Faraday::Response) ? [] : results.messages
     end
   end
