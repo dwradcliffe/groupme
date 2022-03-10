@@ -1,0 +1,31 @@
+[
+  {
+    "created_at": 1352299338,
+    "updated_at": 1352299338,
+    "last_message": {
+      "attachments": [
+
+      ],
+      "avatar_url": "http://i.groupme.com/200x200.jpeg.abcdef",
+      "conversation_id": "12345+67890",
+      "created_at": 1352299338,
+      "favorited_by": [
+
+      ],
+      "id": "1234567890",
+      "name": "John Doe",
+      "recipient_id": "67890",
+      "sender_id": "12345",
+      "sender_type": "user",
+      "source_guid": "GUID",
+      "text": "Hello world",
+      "user_id": "12345"
+    },
+    "messages_count": 10,
+    "other_user": {
+      "avatar_url": "http://i.groupme.com/200x200.jpeg.abcdef",
+      "id": 12345,
+      "name": "John Doe"
+    }
+  }
+]

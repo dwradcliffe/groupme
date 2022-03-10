@@ -4,6 +4,8 @@ require 'groupme/bots'
 require 'groupme/messages'
 require 'groupme/users'
 require 'groupme/likes'
+require 'groupme/chats'
+require 'groupme/direct_messages'
 require 'faraday_middleware'
 
 module GroupMe
@@ -19,6 +21,8 @@ module GroupMe
     include GroupMe::Messages
     include GroupMe::Users
     include GroupMe::Likes
+    include GroupMe::Chats
+    include GroupMe::DirectMessages
 
     private
 
@@ -31,7 +35,7 @@ module GroupMe
     end
 
     def request(method, path, data = {})
-      res = connection.send(method, "v3/#{path}", data)
+      res = connection.send(method, "v3#{path}", data)
       if res.success? && !res.body.empty? && res.body != ' '
         res.body.response
       else
