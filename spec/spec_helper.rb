@@ -1,5 +1,5 @@
 require 'groupme'
-require 'multi_json'
+require 'json'
 require 'webmock/rspec'
 
 def stub_get(url)
@@ -7,7 +7,7 @@ def stub_get(url)
 end
 
 def stub_post(url, data = {})
-  stub_request(:post, "https://api.groupme.com/v3#{url}").with(:body => MultiJson.dump(data))
+  stub_request(:post, "https://api.groupme.com/v3#{url}").with(:body => JSON.dump(data))
 end
 
 def fixture_path
@@ -15,7 +15,7 @@ def fixture_path
 end
 
 def fixture(file)
-  MultiJson.load(File.read(fixture_path + '/' + file))
+  JSON.load(File.read(fixture_path + '/' + file))
 end
 
 def json_response(file, status = 200)

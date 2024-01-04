@@ -22,12 +22,8 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency 'rspec', '~> 3.0'
   gem.add_development_dependency 'webmock', '~> 1.21.0'
   gem.add_development_dependency 'yard'
-  gem.add_development_dependency 'pry'
-  gem.add_development_dependency 'json', '~> 1.7'
-  gem.add_development_dependency 'rubocop', '~> 0.36.0'
 
-  gem.add_dependency 'faraday', '>= 0.9', '< 2.0'
-  gem.add_dependency 'faraday_middleware', '~> 0.9'
+  gem.add_dependency 'faraday', '< 3.0'
   gem.add_dependency 'hashie', '~> 3.0'
   gem.add_dependency 'multi_json', '~> 1.3'
   gem.add_dependency 'simple_oauth', '~> 0.2'
